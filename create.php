@@ -6,7 +6,6 @@ if (isset($_POST['submit'])){
     $email = $_POST['email'];
     $course = $_POST['course'];
 
-    // Use prepared statements for security [cite: 17]
     $stmt = mysqli_prepare($conn, "INSERT INTO students (name, email, course) VALUES (?, ?, ?)");
     mysqli_stmt_bind_param($stmt, "sss", $name, $email, $course);
 
